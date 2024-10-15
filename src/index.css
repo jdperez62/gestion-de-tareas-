@@ -1,0 +1,233 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+  background-color: #d5d6f0;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  
+  button {
+    background-color: #d0d6dd;
+  }
+}
+
+
+
+
+/* Clases generales */
+.tasks-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.task-card {
+   width: 350px;
+   padding: .75rem;
+   border-radius: .25rem;
+   box-shadow: rgba(100, 100, 111, .2) .125rem -.0625rem .1875rem inset,
+               rgba(50, 50, 93, .25) .0625rem -.03125rem .0625rem inset,
+               rgba(0, 28, 34, .35) -.0625rem -.03125rem .0625rem inset,
+               #c0daae .000001px .00714259px .01428571px inset;
+   background-color: #fff;
+   transition: .3s ease-out;
+   margin: 1rem;
+}
+
+/* Clases específicas */
+.completed-task {
+   background-color: #dfe6f9; /* Color para tareas completadas */
+   box-shadow: none;
+}
+
+.due-soon {
+   border: 2px solid red; /* Resaltar tareas que vencen pronto */
+   background-color: #ffe6e6; /* Fondo rojo claro */
+}
+
+/* Filtros adicionales */
+.all-tasks,
+.pending-tasks,
+.completed-tasks {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.all-tasks {
+   color: black;
+}
+
+.pending-tasks {
+   color: green;
+}
+
+.completed-tasks {
+   color: red;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los botones */
+  margin-top: 10px; /* Espacio entre la descripción y los botones */
+}
+
+.button-container button {
+  padding: 0.5rem 1rem; /* Espaciado interno de los botones */
+  border-radius: 0.25rem; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilos opcionales para los botones */
+.button-container button:hover {
+  background-color: #103fa3; /* Color de fondo al pasar el mouse */
+}
+.task-form {
+  background-color: #f9f9f9; /* Fondo claro */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: .5rem; /* Bordes redondeados */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px; /* Sombra sutil */
+  margin-bottom: 1.5rem; /* Margen inferior para separación */
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  width: 80%; /* Ancho completo */
+  padding: .5rem; /* Espaciado interno */
+  margin-bottom: .5rem; /* Margen inferior entre campos */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: .25rem; /* Bordes redondeados */
+}
+
+.task-form button {
+  padding: .5rem 1rem; /* Espaciado interno del botón */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: .25rem; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+}
+
+.task-form button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+.task-button {
+  padding: .5rem 1rem; /* Espaciado interno del botón */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: rgb(255, 255, 255); /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: .25rem; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: background-color .4s ease; /* Transición suave para el cambio de color */
+}
+
+.task-button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Margen entre botones en la vista de filas */
+.button-spacing {
+  margin-right: 15px; /* Espacio entre los botones */
+}
+
+/* Estilo general para los selectores */
+.select-filter {
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: .25rem; /* Bordes redondeados */
+  background-color: #f3bb20; /* Fondo blanco */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: border-color .3s ease; /* Transición suave para el cambio de color del borde */
+}
+
+/* Efecto hover para el selector */
+.select-filter:hover {
+  border-color: #73b5b8; /* Color del borde al pasar el mouse */
+}
+
+/* Estilo para la etiqueta */
+.label-filter {
+  margin-right: 0.7rem; /* Espacio entre la etiqueta y el selector */
+  margin-left: 2rem;
+}
+
+
+
+/* Estilos para la vista en lista */
+.list-view table {
+    width: 100%;
+    border-collapse: collapse; /* Para eliminar espacios entre celdas */
+}
+
+.list-view th,
+.list-view td {
+    border: 1px solid #ccc; /* Borde gris claro */
+    padding: .5rem; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.list-view th {
+    background-color: #f9f9f9; /* Fondo gris claro para encabezados */
+}
+
+/* Estilos para las tarjetas */
+.grid-view {
+    display: grid; /* Cambiar a grid si es necesario */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajustar columnas */
+    gap: 1rem; /* Espacio entre tarjetas */
+}
+
+
+/* Estilo para las filas que están próximas a vencer */
+.bg-red-100 {
+    background-color: rgba(255, 0, 0, 0.1); /* Fondo rojo claro */
+}
+.checkbox-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenido a la derecha */    
+}
+
+
